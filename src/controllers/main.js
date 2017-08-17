@@ -2,8 +2,7 @@
 
 class Main {
     constructor($scope) {
-        this.$ = $scope;
-        this.$.msg = 'hello, the world!';
+        this.$ = $scope;        
         
         this.$.barChartConfig = {
             svgSize: {
@@ -12,17 +11,18 @@ class Main {
             },
             
             data: [
-                {name: 'a', value: 10}
-                {name: 'b', value: 20}
-                {name: 'c', value: 30}
+                {name: 'Company A', value: 131},
+                {name: 'Company B', value: 74},
+                {name: 'Company C', value: 97}
             ]
         };
 
-        this.init();
+
+        this.$.dataStr = JSON.stringify(this.$.barChartConfig.data);
     }
 
-    init() {
-        console.log('init has been called');
+    update() {
+        this.$.barChartConfig.data = JSON.parse(this.$.dataStr);
     }
 }
 

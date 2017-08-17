@@ -1,0 +1,9 @@
+svg {
+	overflow: visible !important;
+}
+
+.chart-data {
+	width: 100%;
+	max-width: 800px;
+	height: 100px;
+}
