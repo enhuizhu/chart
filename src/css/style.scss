@@ -1,0 +1,39 @@
+@import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+svg {
+	overflow: visible !important;
+}
+
+.chart-container {
+	margin-top: 10px;
+}
+
+.bar-chart, .pie-chart {
+	margin: 0 auto;
+}
+
+.chart-data {
+	width: 100%;
+	max-width: 800px;
+	height: 100px;
+}
+
+.chart-info {
+	margin-top: 10px;
+}
+
+.bullet-container {
+	float: left;
+	margin-right: 10px;
+
+	.bullet {
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+	}
+}
+
+.space-bottom {
+	margin-bottom: 10px;
+}

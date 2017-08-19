@@ -1,12 +1,12 @@
 'use strict';
 
-class Main {
+class main {
     constructor($scope) {
         this.$ = $scope;        
         
-        this.$.barChartConfig = {
+        this.$.chartConfig = {
             svgSize: {
-                width: 600,
+                width: 400,
                 height: 300 
             },
             
@@ -18,12 +18,12 @@ class Main {
         };
 
 
-        this.$.dataStr = JSON.stringify(this.$.barChartConfig.data);
+        this.$.dataStr = JSON.stringify(this.$.chartConfig.data);
     }
 
     update() {
-        this.$.barChartConfig.data = JSON.parse(this.$.dataStr);
+        this.$.chartConfig.data = JSON.parse(this.$.dataStr);
     }
 }
 
-angular.module('chart').controller('main', Main);
+angular.module('chart').controller('main', ['$scope', main]);

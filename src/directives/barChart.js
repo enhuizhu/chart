@@ -1,9 +1,11 @@
 'use strict';
 
+import Color from '../services/color';
+
 class BarChartController {
     constructor($scope, $element) {
         this.$ = $scope;
-        this.element = d3.select($element[0]);
+        this.element = d3.select($element[0]).select('svg');
         this.margin = 20;
         this.barWidth = 20;
         this.setUpWatcher();
@@ -31,10 +33,10 @@ class BarChartController {
         });
         
         this.xAxis = d3.axisBottom(this.xScale)
-            .ticks(this.$.config.data.length)
-            .tickFormat(d => {                
+            .ticks(this.$.config.data.length + 1)
+            .tickFormat((d, i) => {                
                 if (d > 0) {
-                    return tickValues[d - 1]
+                    return tickValues[i - 1]
                 }
 
                 return '';
@@ -97,7 +99,9 @@ class BarChartController {
        reacts.enter()
            .append('rect')
            .attr('width', this.barWidth)
-           .attr('fill', '#03a9f4')
+           .attr('fill', (d, i) => {
+                return Color.getColor(i);
+           })
            .attr('y', () => {return this.$.config.svgSize.height - this.margin})
        .merge(reacts)
            .attr('x', setX)
@@ -117,13 +121,7 @@ angular.module('chart').directive('barChart', function() {
         scope: {
             config: '='
         },
-        
         templateUrl: './src/views/barChart.html',
-        
         controller: BarChartController,
-        
-        link: function(scope, element, attr) {
-                
-        }
     }
 });
