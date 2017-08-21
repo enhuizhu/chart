@@ -71,7 +71,7 @@
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+    value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -81,19 +81,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var colors = ["#63a395", "#7cbbd6", "#af76db", "#db76cc"];
 
 var Color = function () {
-	function Color() {
-		_classCallCheck(this, Color);
-	}
+    function Color() {
+        _classCallCheck(this, Color);
+    }
 
-	_createClass(Color, null, [{
-		key: "getColor",
-		value: function getColor(index) {
-			var newIndex = index % colors.length;
-			return colors[newIndex];
-		}
-	}]);
+    _createClass(Color, null, [{
+        key: "getColor",
+        value: function getColor(index) {
+            var newIndex = index % colors.length;
+            return colors[newIndex];
+        }
+    }]);
 
-	return Color;
+    return Color;
 }();
 
 exports.default = Color;
@@ -79035,23 +79035,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var ChartInfoController = function ChartInfoController($scope, $element) {
-	_classCallCheck(this, ChartInfoController);
+    _classCallCheck(this, ChartInfoController);
 
-	this.$ = $scope;
-	this.$.color = _color2.default;
-	this.element = d3.select($element[0]);
+    this.$ = $scope;
+    this.$.color = _color2.default;
+    this.element = d3.select($element[0]);
 };
 
 angular.module('chart').directive('chartInfo', function () {
-	return {
-		restrict: 'AE',
-		replace: true,
-		scope: {
-			data: '='
-		},
-		templateUrl: './src/views/chartInfo.html',
-		controller: ChartInfoController
-	};
+    return {
+        restrict: 'AE',
+        replace: true,
+        scope: {
+            data: '='
+        },
+        templateUrl: './src/views/chartInfo.html',
+        controller: ChartInfoController
+    };
 });
 
 /***/ }),
